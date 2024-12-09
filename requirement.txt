@@ -5,4 +5,4 @@ keras==2.17.0
 pandas==1.5.3
 numpy==1.23.5
 matplotlib==3.7.1
-vnstock==0.2.9.2.3
+vnstock == 0.2.9.2.3
