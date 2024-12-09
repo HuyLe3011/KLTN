@@ -4,6 +4,8 @@ pandas
 
 matplotlib
 
+pytz
+
 tensorflow
 
 streamlit
