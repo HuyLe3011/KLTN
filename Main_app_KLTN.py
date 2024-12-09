@@ -1,5 +1,5 @@
-from vnstock import *
-
+#!/usr/bin/env python
+# coding: utf-8
 import streamlit as st
 
 import pandas as pd
@@ -21,6 +21,7 @@ from sklearn.metrics import r2_score
 from datetime import datetime
 import pytz
 
+from vnstock import *
 
 import warnings
 warnings.filterwarnings('ignore')
