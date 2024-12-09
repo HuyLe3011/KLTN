@@ -1,11 +1,21 @@
 tensorflow
+
 scikeras==0.11.0
+
 scikit-learn==1.3.0
+
 keras==2.17.0
+
 pandas==1.5.3
+
 numpy==1.23.5
+
 matplotlib==3.7.1
+
 vnstock == 0.2.9.2.3
+
 beautifulsoup4
+
 Pillow
+
 IPython
