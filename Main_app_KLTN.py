@@ -90,7 +90,7 @@ if stock is not None:
         scaler = MinMaxScaler(feature_range=(0, 1))
         train_data = scaler.fit_transform(train_data)
 
-        time_step = 20
+        time_step = 100
         predict_step = 1
         X_train, y_train = create_multistep_dataset(train_data, time_step, predict_step)
 
@@ -104,14 +104,14 @@ if stock is not None:
                             ])
         model.compile(optimizer='adam', loss='mean_squared_error')
 
-        model.fit(X_train, y_train, batch_size=32, epochs=5,shuffle=False)
+        model.fit(X_train, y_train, batch_size=32, epochs=20,shuffle=False)
         
         yhat_train = model.predict(X_train)
                 
         yhat_train = scaler.inverse_transform(yhat_train)
         y_train=scaler.inverse_transform(y_train)
         
-        R2 = round(r2_score(y_train, yhat_train), 6)
+        R2 = round(r2_score(y_train, yhat_train), 1)
 
 
         st.write('Mô hình có độ chính xác là :',R2*100,'%')
