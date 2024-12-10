@@ -90,7 +90,7 @@ if stock is not None:
         scaler = MinMaxScaler(feature_range=(0, 1))
         train_data = scaler.fit_transform(train_data)
 
-        time_step = 100
+        time_step = 20
         predict_step = 1
         X_train, y_train = create_multistep_dataset(train_data, time_step, predict_step)
 
