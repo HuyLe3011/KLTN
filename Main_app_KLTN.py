@@ -94,7 +94,7 @@ if stock is not None:
         predict_step = 1
         X_train, y_train = create_multistep_dataset(train_data, time_step, predict_step)
 
-        X_train = X_train.reshape(X_train.shape[0], X_train.shape[1], 3)
+        X_train = X_train.reshape(X_train.shape[0], X_train.shape[1], 1)
 
         model = Sequential([
                             LSTM(units=64, return_sequences=True, input_shape=(time_step, 1)),  # LSTM layer đầu tiên
