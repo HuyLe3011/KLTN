@@ -118,6 +118,7 @@ if stock is not None:
         df.set_index('time',inplace=True)
         df.index=pd.to_datetime(df.index,format='%d/%m/%Y')
         df=df.sort_values('time')
+        print_date=df.tail(1).time.values[0]
         pos_df=df.reset_index()
         
         train_data = df[['close']].values
@@ -160,7 +161,7 @@ if stock is not None:
         y_test = scaler.inverse_transform(y_test)
 
         y_test=round(y_test[0,0],-3)
-        print_date=df.tail(1).time.values[0]
+        
         print_date = add_business_day(print_date)
         print_date=print_date.strftime('%d-%m-%Y')
         st.write("Giá đóng cửa của ngày ",print_date ," là : ",y_test)
