@@ -58,7 +58,7 @@ def get_today_vietnam():
 
 def add_business_day(date):
     while True:
-        date += datetime.timedelta(days=1)  # Cộng thêm 1 ngày
+        date += timedelta(days=1)  # Cộng thêm 1 ngày
         if date.weekday() < 5:  # Kiểm tra nếu là ngày trong tuần (Thứ Hai đến Thứ Sáu)
             break
     return date
