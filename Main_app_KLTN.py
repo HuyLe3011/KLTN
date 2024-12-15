@@ -56,7 +56,7 @@ def get_today_vietnam():
     now = datetime.now(vietnam_tz)
     # Trả về ngày hôm nay dưới định dạng chuỗi YYYY-MM-DD
     return now.strftime('%Y-%m-%d')
-
+st.image('banner.png')
 st.header(":red[Dự đoán giá cổ phiếu bằng mô hình LSTM - GRU]")
 
 list=listing_companies()
