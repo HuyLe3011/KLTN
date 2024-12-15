@@ -118,7 +118,8 @@ if stock is not None:
         df.set_index('time',inplace=True)
         df.index=pd.to_datetime(df.index,format='%d/%m/%Y')
         df=df.sort_values('time')
-        print_date=df.tail(1).time.values[0]
+        print_date=df.tail(1)
+        print_date=df.time.values[0]
         pos_df=df.reset_index()
         
         train_data = df[['close']].values
