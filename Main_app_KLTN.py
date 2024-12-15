@@ -95,7 +95,7 @@ st.image('Banner.png')
 st.header(":red[Dự đoán giá cổ phiếu bằng mô hình LSTM - GRU]")
 
 list=listing_companies()
-list=list[(list['organTypeCode']=='DN')&((list['comGroupCode']=='HOSE') or (list['comGroupCode']=='HNX'))]
+list=list[(list['organTypeCode']=='DN')&((list['comGroupCode']=='HOSE') | (list['comGroupCode']=='HNX'))]
 mcp=list.ticker.to_list()
 mcp.sort()
 
