@@ -66,7 +66,7 @@ def add_bg_from_local(image_file):
     .stApp {{
         background-image: url(data:image/{"png"};base64,{encoded_string.decode()});
         background-size: cover;
-        background-color: rgba(255, 255, 255, 0.7); /* Điều chỉnh độ mờ ở đây */
+        background-color: rgba(255, 255, 255, 0.9); /* Điều chỉnh độ mờ ở đây */
         background-blend-mode: overlay;
     }}
     .custom-title {{
