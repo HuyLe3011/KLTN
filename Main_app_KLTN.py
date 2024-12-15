@@ -115,9 +115,7 @@ if stock is not None:
         df=stock_historical_data(stock,start_date,end_date)
         print_date=df.tail(1).time.values[0]
         
-        print_date = add_business_day(print_date)
-        print_date=print_date.strftime('%d-%m-%Y')
-        st.write("Giá đóng cửa ngày ",print_date)
+
         
         df.set_index('time',inplace=True)
         df.index=pd.to_datetime(df.index,format='%d/%m/%Y')
