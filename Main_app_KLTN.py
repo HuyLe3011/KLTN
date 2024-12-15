@@ -57,6 +57,31 @@ def get_today_vietnam():
     # Trả về ngày hôm nay dưới định dạng chuỗi YYYY-MM-DD
     return now.strftime('%Y-%m-%d')
 
+def add_bg_from_local(image_file):
+    with open(image_file, "rb") as image_file:
+        encoded_string = base64.b64encode(image_file.read())
+    st.markdown(
+    f"""
+    <style>
+    .stApp {{
+        background-image: url(data:image/{"png"};base64,{encoded_string.decode()});
+        background-size: cover;
+        background-color: rgba(255, 255, 255, 0.7); /* Điều chỉnh độ mờ ở đây */
+        background-blend-mode: overlay;
+    }}
+    .custom-title {{
+        color: #F05454;
+    }}
+    .stMarkdown, .stText {{
+        color: #30475E !important;
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True
+    )
+
+add_bg_from_local('background.png')
+
 st.image('Banner.png')
 st.header(":red[Dự đoán giá cổ phiếu bằng mô hình LSTM - GRU]")
 
