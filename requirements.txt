@@ -21,3 +21,5 @@ Pillow
 IPython
 
 plotly
+
+datetime
