@@ -57,6 +57,15 @@ def get_today_vietnam():
     # Trả về ngày hôm nay dưới định dạng chuỗi YYYY-MM-DD
     return now.strftime('%Y-%m-%d')
 
+def add_business_day(date):
+    while True:
+        date += datetime.timedelta(days=1)  # Cộng thêm 1 ngày
+        if date.weekday() < 5:  # Kiểm tra nếu là ngày trong tuần (Thứ Hai đến Thứ Sáu)
+            break
+    return date
+
+
+
 def add_bg_from_local(image_file):
     with open(image_file, "rb") as image_file:
         encoded_string = base64.b64encode(image_file.read())
@@ -151,7 +160,10 @@ if stock is not None:
         y_test = scaler.inverse_transform(y_test)
 
         y_test=round(y_test[0,0],-3)
-        st.write("Giá đóng cửa của ngày hôm sau là : ",y_test)
+        print_date=df.tail(1).time.values[0]
+        print_date = add_business_day(print_date)
+        print_date=print_date.strftime('%d-%m-%Y')
+        st.write("Giá đóng cửa của ngày ",print_date ," là : ",y_test)
 
 
 
