@@ -17,7 +17,7 @@ from sklearn.preprocessing import MinMaxScaler
 from keras.callbacks import EarlyStopping
 from sklearn.metrics import r2_score
 
-from datetime import datetime
+from datetime import datetime,timedelta
 import pytz
 from vnstock import *
 
