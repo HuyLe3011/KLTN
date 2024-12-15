@@ -19,7 +19,7 @@ from sklearn.metrics import r2_score
 
 from datetime import datetime
 import pytz
-
+import datetime
 from vnstock import *
 
 import warnings
@@ -115,7 +115,11 @@ if stock is not None:
         end_date=get_today_vietnam()
         df=stock_historical_data(stock,start_date,end_date)
         print_date=df.tail(1).time.values[0]
-
+        
+        print_date = add_business_day(print_date)
+        print_date=print_date.strftime('%d-%m-%Y')
+        st.write("Giá đóng cửa của ngày ",print_date)
+        
         df.set_index('time',inplace=True)
         df.index=pd.to_datetime(df.index,format='%d/%m/%Y')
         df=df.sort_values('time')
