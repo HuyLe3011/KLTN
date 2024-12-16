@@ -90,7 +90,6 @@ def add_bg_from_local(image_file):
 
 add_bg_from_local('background.png')
 
-st.image('Banner.png')
 st.header(":red[Dự đoán giá cổ phiếu bằng mô hình LSTM - GRU]")
 
 list=listing_companies()
