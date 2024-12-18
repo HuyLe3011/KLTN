@@ -140,7 +140,7 @@ if stock is not None:
                             ])
         model.compile(optimizer='adam', loss='mean_absolute_error')
 
-        model.fit(X_train, y_train, batch_size=32, epochs=70,shuffle=True)
+        model.fit(X_train, y_train, batch_size=32, epochs=30,shuffle=True)
         
         yhat_train = model.predict(X_train)
                 
