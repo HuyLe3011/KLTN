@@ -26,7 +26,7 @@ warnings.filterwarnings('ignore')
 
 
 
-seed_value = 40 
+seed_value = 32
 
 os.environ['PYTHONHASHSEED'] = str(seed_value)
 random.seed(seed_value)
