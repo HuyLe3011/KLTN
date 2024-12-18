@@ -133,14 +133,14 @@ if stock is not None:
         X_train = X_train.reshape(X_train.shape[0], X_train.shape[1], 1)
 
         model = Sequential([
-                            LSTM(units=128, return_sequences=True, input_shape=(time_step, 1)),  # LSTM layer đầu tiên
-                            GRU(units=64, return_sequences=False),
-                            Dense(units=64),
+                            LSTM(units=256, return_sequences=True, input_shape=(time_step, 1)),  # LSTM layer đầu tiên
+                            GRU(units=256, return_sequences=False),
+                            Dense(units=256),
                             Dense(units=predict_step)
                             ])
         model.compile(optimizer='adam', loss='mean_absolute_error')
 
-        model.fit(X_train, y_train, batch_size=32, epochs=80,shuffle=False)
+        model.fit(X_train, y_train, batch_size=32, epochs=50,shuffle=True)
         
         yhat_train = model.predict(X_train)
                 
