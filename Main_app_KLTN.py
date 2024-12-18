@@ -160,7 +160,7 @@ if stock is not None:
 
         y_test = scaler.inverse_transform(y_test)
 
-        y_test=round(y_test[0,0],-3)
+        y_test=round(y_test[0,0],-2)
         
         print_date = add_business_day(print_date)
         print_date=print_date.strftime('%d-%m-%Y')
