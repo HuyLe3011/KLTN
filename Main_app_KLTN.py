@@ -149,7 +149,7 @@ if stock is not None:
         
         R2 = round(r2_score(y_train, yhat_train), 1)
         RMSE=round(root_mean_squared_error(y_train, yhat_train),-2)
-        MAE=round(root_mean_absolute_error(y_train, yhat_train),-2)
+        MAE=round(mean_absolute_error(y_train, yhat_train),-2)
 
         if RMSE>MAE:
             bias=RMSE
