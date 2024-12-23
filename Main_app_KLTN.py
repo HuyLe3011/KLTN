@@ -15,7 +15,7 @@ from tensorflow.keras.models import Sequential
 from scikeras.wrappers import KerasRegressor
 from sklearn.preprocessing import MinMaxScaler
 from keras.callbacks import EarlyStopping
-from sklearn.metrics import r2_score
+from sklearn.metrics import r2_score,mean_squared_error, mean_absolute_error, root_mean_squared_error
 
 from datetime import datetime,timedelta
 import pytz
@@ -148,7 +148,13 @@ if stock is not None:
         y_train=scaler.inverse_transform(y_train)
         
         R2 = round(r2_score(y_train, yhat_train), 1)
+        RMSE=round(root_mean_squared_error(y_train, yhat_train),-2)
+        MAE=round(root_mean_absolute_error(y_train, yhat_train),-2)
 
+        if RMSE>MAE:
+            bias=RMSE
+        else:
+            bias=MAE
 
         st.write('Mô hình có độ chính xác là :',R2*100,'%')
 
@@ -164,7 +170,7 @@ if stock is not None:
         
         print_date = add_business_day(print_date)
         print_date=print_date.strftime('%d-%m-%Y')
-        st.write("Giá đóng cửa của ngày ",print_date ," là : ",y_test)
+        st.write("Giá đóng cửa của ngày ",print_date ," sẽ nằm trong khoảng từ : ",y_test-bias," đến ",y_test+bias)
 
 
 
