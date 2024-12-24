@@ -156,8 +156,6 @@ if stock is not None:
         else:
             bias=MAE
 
-        st.write('Mô hình có độ chính xác là :',R2*100,'%')
-
         test_data=train_data[-time_step:]
         
         test_data = test_data.reshape(test_data.shape[0], test_data.shape[1], 1)
