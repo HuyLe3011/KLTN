@@ -108,6 +108,7 @@ if stock is not None:
     st.write('Bạn có muốn dự báo cổ phiếu này ?')
 
     if st.button("Nhấn nút để bắt đầu tính toán"):
+        # Chỉnh mô hình từ đây
         st.success("Đang tính toán để dự đoán giá cổ phiếu")
         start_date='2015-01-01'
         end_date=get_today_vietnam()
