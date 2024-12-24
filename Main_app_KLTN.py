@@ -90,7 +90,7 @@ def add_bg_from_local(image_file):
 
 add_bg_from_local('background.png')
 
-st.header(":red[Dự đoán giá cổ phiếu \nbằng mô hình LSTM - GRU]")
+st.header(":blue[Dự đoán giá cổ phiếu bằng mô hình LSTM - GRU]")
 
 list=listing_companies()
 list=list[(list['organTypeCode']=='DN')&((list['comGroupCode']=='HOSE') | (list['comGroupCode']=='HNX'))]
