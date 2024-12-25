@@ -92,7 +92,16 @@ add_bg_from_local('background.png')
 
 st.image('Banner.png')
 st.write(":blue[App này được xây dựng nhằm phục vụ cho mục đích nghiên cứu KLTN]")
-st.header(":blue[Dự đoán giá cổ phiếu bằng mô hình LSTM - GRU]")
+#st.header(":blue[Dự đoán giá cổ phiếu bằng mô hình LSTM - GRU]")
+text="Dự đoán giá cổ phiếu bằng mô hình LSTM - GRU"
+st.markdown(
+    f"""
+    <div style="text-align: center; font-size: 20px; font-weight: bold;">
+        {text}
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
 list=listing_companies()
 list=list[(list['organTypeCode']=='DN')&((list['comGroupCode']=='HOSE') | (list['comGroupCode']=='HNX'))]
