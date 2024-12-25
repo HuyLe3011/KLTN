@@ -91,7 +91,7 @@ def add_bg_from_local(image_file):
 add_bg_from_local('background.png')
 
 st.image('Banner.png')
-text="App này được xây dựng nhằm phục vụ cho mục đích nghiên cứu KLTN"
+text="App này được xây dựng nhằm phục vụ cho mục đích  phục vụ cho KLTN của sinh viên"
 st.markdown(
     f"""
     <div style="text-align: center; color: blue; font-size: 16px;">
