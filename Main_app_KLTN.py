@@ -95,7 +95,7 @@ st.write(":blue[App này được xây dựng nhằm phục vụ cho mục đíc
 text="App này được xây dựng nhằm phục vụ cho mục đích nghiên cứu KLTN"
 st.markdown(
     f"""
-    <div style="text-align: center;color=blue ;font-size: 20px; font-weight: bold;">
+    <div style="text-align: center; font_color=blue;font-size: 20px; font-weight: bold;">
         {text}
     </div>
     """,
