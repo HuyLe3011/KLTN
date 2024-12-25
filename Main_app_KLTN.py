@@ -100,7 +100,19 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-st.header(":blue[Dự đoán giá cổ phiếu bằng mô hình LSTM - GRU]")
+
+header_text = "Dự đoán giá cổ phiếu bằng mô hình LSTM - GRU"
+
+# Canh giữa header và đổi màu chữ thành xanh
+st.markdown(
+    f"""
+    <h1 style="text-align: center; color: blue;">
+        {header_text}
+    </h1>
+    """,
+    unsafe_allow_html=True
+)
+
 list=listing_companies()
 list=list[(list['organTypeCode']=='DN')&((list['comGroupCode']=='HOSE') | (list['comGroupCode']=='HNX'))]
 mcp=list.ticker.to_list()
