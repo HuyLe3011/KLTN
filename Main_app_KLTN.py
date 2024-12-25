@@ -90,6 +90,8 @@ def add_bg_from_local(image_file):
 
 add_bg_from_local('background.png')
 
+st.image('Banner.png')
+st.write(":blue[App này được xây dựng nhằm phục vụ cho mục đích nghiên cứu KLTN]")
 st.header(":blue[Dự đoán giá cổ phiếu bằng mô hình LSTM - GRU]")
 
 list=listing_companies()
